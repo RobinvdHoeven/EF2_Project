@@ -23,3 +23,5 @@ Route::get('/images', [ImageController::class, 'create']);
 Route::get('/images/{id}', [ImageController::class, 'show'])->name('image.show');
 Route::post('/images/store', [ImageController::class, 'store'])->name('image.store');
 Route::post('images/delete/{id}', [ImageController::class, 'delete'])->name('image.delete');
+Route::post('/images/rotateleft', [ImageController::class, 'rotateLeft'])->name('rotate.left');
+Route::post('/images/rotateright', [ImageController::class, 'rotateRight'])->name('rotate.right');

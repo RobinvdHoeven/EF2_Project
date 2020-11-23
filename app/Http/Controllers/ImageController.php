@@ -49,4 +49,22 @@ class ImageController extends Controller
 
         return redirect('/images');
     }
+
+    public function rotateLeft(Request $request)
+    {
+        $id = $request->input('id');
+
+        $image = Image::where('id', $id)->firstOrFail();
+        $image->angle += 90;
+        $image->save();
+    }
+
+    public function rotateRight(Request $request)
+    {
+        $id = $request->input('id');
+
+        $image = Image::where('id', $id)->firstOrFail();
+        $image->angle -= 90;
+        $image->save();
+    }
 }
